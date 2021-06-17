@@ -1,0 +1,52 @@
+********************
+* Lab 4 Reflection *
+********************
+Name: CHOU, Heng-Ying
+ID: hengying@uw.edu  
+
+
+-----------------------------------------------------------
+1) Instructions in the nested loops that access memory
+   lab0.d: 9
+   List of instructions for lab0.d:
+
+  4009af:	8b 55 e4             	mov    -0x1c(%rbp),%edx
+  4009b2:	8b 4d e8             	mov    -0x18(%rbp),%ecx
+  4009b5:	8b 45 ec             	mov    -0x14(%rbp),%eax
+  4009d9:	83 45 e4 01          	addl   $0x1,-0x1c(%rbp)
+  4009dd:	81 7d e4 f3 01 00 00 	cmpl   $0x1f3,-0x1c(%rbp)
+  4009e6:	83 45 e8 01          	addl   $0x1,-0x18(%rbp)
+  4009ea:	81 7d e8 f3 01 00 00 	cmpl   $0x1f3,-0x18(%rbp)
+  4009f3:	83 45 ec 01          	addl   $0x1,-0x14(%rbp)
+  4009f7:	81 7d ec f3 01 00 00 	cmpl   $0x1f3,-0x14(%rbp)
+
+   lab0opt.d: 4
+   List of instructions for lab0opt.d:
+
+   400995:	48 8d 85 40 42 0f 00 	lea    0xf4240(%rbp),%rax
+   40099f:	48 8d b0 c0 bd f0 ff 	lea    -0xf4240(%rax),%rsi
+   4009bb:	89 0c 96             	mov    %ecx,(%rsi,%rdx,4)
+
+-----------------------------------------------------------
+2) Where are the loop variables stored in lab0.d:
+   i: -0x14(%rbp)
+   j: -0x18(%rbp)
+   k: -0x1c(%rbp)
+-----------------------------------------------------------
+3) Corresponding values in lab0opt.d:
+   %edx: k
+   %ecx: i + j + k
+-----------------------------------------------------------
+4) Effect on number of misses: 1003003001 (approximately 1000000000)
+
+   Explain:
+   For i, the miss number in for loop would be 1(i = 0 ) + 500( i < size) + 500 (i++) = 1001.
+   This also works for j and k. So the total miss rate would be 1001*1001*1001 = 1003003001.     
+   
+-----------------------------------------------------------
+5) Effect on number of misses: 375000000
+
+   Explain: we have three for loop in part4 and three miss in the for loop.
+   So the total number of miss is 3*500*500*500 = 375000000
+
+-----------------------------------------------------------

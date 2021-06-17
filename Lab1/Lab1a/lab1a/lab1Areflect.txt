@@ -1,0 +1,35 @@
+*********************
+* Lab 1a Reflection *
+*********************
+Name: CHOU, HENG-YING 
+ID: 1926322  
+
+
+-----------------------------------------------------------
+1) Use/Benefit and Equation:
+
+    a.) Why pointer arithmetic is useful/beneficial
+        An pointer stores the address of an data. So we can use a pointer to trace data through pointer arithmetic in different address 
+        and do not need to use the name of data to trace data every time.
+
+    b.) The relationship between arrays and pointers
+        The equation of pointer and array is in the following:
+            int *pointer = &arrays[0]
+        so, the pointer of an array is the address of first element in an array. I can use pointer arithmetic to trace 
+        element in the array.
+
+-----------------------------------------------------------
+2) Steps:
+
+    If I have two address, ptr1 and ptr2, and ptr2 is bigger then ptr1. so the difference between them is difference = ptr2 - ptr1
+    However, because an address is 8 bytes, so the difference should be stored in an 8 bytes data type. So I use int to store difference and
+    the form of address difference would be --> int difference = ptr2 - ptr1.
+
+-----------------------------------------------------------
+3) Explain:
+    Becasue this is pass by reference, when I do the swap integer, I only need to swap the context in the two pointers
+    and do not need to return anything. This is important for arrays becasue if I want to pass an array to a function, I only 
+    need to pass the address of the array to the function and the length of an array will not be limited.
+    If I pass by integer, the length of array will be limited and the use of function will be limited.
+
+-----------------------------------------------------------

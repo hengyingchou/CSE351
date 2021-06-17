@@ -1,0 +1,23 @@
+********************
+* Lab 5 Reflection *
+********************
+Name: Chou, Heng-Ying
+ID: 1926322    
+
+
+-----------------------------------------------------------
+1) Alignment: 8 
+   Reasoning: Since everytime when the allocator allocates a block, it always allocates in mutiples of 8.
+   Hereby, the size of Alignment is 8. 
+   
+
+
+ 
+-----------------------------------------------------------
+2) Boundary Tag Size:  8 bytes
+   Reasoning: Boundary Tag size(footer) should be eqaul to the sizeAndTags(header) which is one word. 
+   Hereby, it is 8 bytes. 
+
+
+
+-----------------------------------------------------------

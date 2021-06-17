@@ -1,0 +1,28 @@
+********************
+* Lab 3 Reflection *
+********************
+Name: Chou, Heng-Ying
+ID: 1926322  
+
+
+-----------------------------------------------------------
+1) Explain:  
+Basically, if the buffer address has been corrupted, it can invoke bad jump with bad instruction, jmpq. 
+Hereby, the program returns SIGSEGV and Segmentation fault. 
+
+-----------------------------------------------------------
+2) Instruction 1: <fillArray + 162> cmp 0x4(%rsp),%eax
+   Purpose: know that whether the input reaches the top of stack
+
+   Instruction 2: <fillArray + 148> 
+   Purpose: checking whether the value is stored in array.
+
+   Minimum length to cause a seg fault: 15 
+   Calculation: 10*4 bytes + 8 bytes + 8 bytes(buffer) = 56 bytes = 14 integer --> the smallest number is 15
+-----------------------------------------------------------
+3) Agree or Disagree: Disagree
+   Explain:  In dynamical allocation function , such as malloc, allocates a space from memory and return a pointer. 
+   So, if the number of values we assign is more than the length of the memory we allocate. 
+   The segmentation is still possiblly happend.    
+
+-----------------------------------------------------------

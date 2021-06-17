@@ -1,0 +1,3 @@
+mov $0x7c646e095ee64710, %rax
+push $0x0000000000400ef3
+ret
